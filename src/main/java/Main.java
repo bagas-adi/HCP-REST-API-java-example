@@ -1,4 +1,3 @@
-import com.sun.org.slf4j.internal.Logger;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -12,6 +11,7 @@ import sun.rmi.runtime.Log;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Main {
     static private final  String HCPAuthHeaderKey = "Authorization";
@@ -63,7 +63,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -98,7 +98,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -128,7 +128,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
         /*  Entity Content is not currently being returned as it should in this example.
         //get response content
@@ -161,7 +161,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -214,7 +214,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
     }
 
@@ -252,7 +252,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
     }
 
@@ -284,7 +284,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
     }
 
 
@@ -310,7 +310,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
     }
 
 
@@ -330,7 +330,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
     }
 
     public static void addMetaData(HttpClient client, String auth) throws IOException{
@@ -360,7 +360,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
     }
 
     public static void getMetaData(HttpClient client, String auth) throws IOException{
@@ -379,7 +379,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -409,7 +409,7 @@ public class Main {
         //print response status to console
 //        System.out.println("Response Code : "
 //                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
-        new Logger(responseLogger(response));
+        Logger.getLogger(responseLogger(response));
     }
 
 

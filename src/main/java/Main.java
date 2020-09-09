@@ -1,3 +1,4 @@
+import com.sun.org.slf4j.internal.Logger;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -6,11 +7,9 @@ import org.apache.http.client.methods.*;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import sun.rmi.runtime.Log;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +43,9 @@ public class Main {
         return;
     }
 
+    public static String responseLogger(HttpResponse response){
+        return "Response Code : "  + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase();
+    }
     public static void getStats(HttpClient client, String auth) throws IOException {
         //specify namespace URL - eg. namespace.tenant.HCP.DOMAIN.com/rest/path
         String url =  HCP_NAMESPACE_URL+"/proc/statistics";
@@ -59,8 +61,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -93,8 +96,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -122,8 +126,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
         /*  Entity Content is not currently being returned as it should in this example.
         //get response content
@@ -154,8 +159,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -206,8 +212,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
     }
 
@@ -243,8 +250,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
     }
 
@@ -274,8 +282,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
     }
 
 
@@ -299,8 +308,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
     }
 
 
@@ -318,8 +328,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
     }
 
     public static void addMetaData(HttpClient client, String auth) throws IOException{
@@ -347,8 +358,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
     }
 
     public static void getMetaData(HttpClient client, String auth) throws IOException{
@@ -365,8 +377,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
 
         //get response content
         BufferedReader rd = new BufferedReader(
@@ -394,8 +407,9 @@ public class Main {
         HttpResponse response = client.execute(request);
 
         //print response status to console
-        System.out.println("Response Code : "
-                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+//        System.out.println("Response Code : "
+//                + response.getStatusLine().getStatusCode() + " " + response.getStatusLine().getReasonPhrase());
+        new Logger(responseLogger(response));
     }
 
 
